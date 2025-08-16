@@ -18,7 +18,7 @@ export default function Works({ forwardedRef }) {
         {/* Project #1 */}
         <div className=" col-span-1 md:col-span-12">
           <Projects
-            link="https://wisespend.me"
+            link="https://wisexspend.vercel.app/"
             img={wisespend}
             alt="WiseSpend website mockup"
             name="WiseSpend Website | Expenses Tracking SaaS"
