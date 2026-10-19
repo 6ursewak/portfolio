@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import profileImg from "/src/assets/images/profile2.svg";
+import profileImg from "/src/assets/images/myself2.png";
 import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
 import Heading from "../ui/Heading";
@@ -36,16 +36,18 @@ export default function About() {
     // Try using max width to contain the size of the container
     <section ref={aboutSection} aria-label="about me">
       <Heading title="about me" />
-      <div className="mt-10 flex flex-col items-start gap-8 md:flex-row lg:gap-10 ">
-        <div className="top-28 overflow-hidden rounded-md md:sticky md:w-1/2">
+      <div className="mt-10 flex flex-col items-start gap-8 md:flex-row lg:gap-10">
+        {/* Added flex container with max-width to constrain the image wrapper size */}
+        <div className="top-28 flex justify-center overflow-hidden rounded-md md:sticky md:w-1/2">
           <img
             ref={profile}
             loading="lazy"
-            className="aspect-square h-auto w-full rounded-md object-cover object-center md:aspect-auto"
+            // Constrain width and height here (e.g., max-w-sm or a fixed max-height)
+            className="aspect-square h-auto w-full max-w-sm rounded-md object-cover object-center md:aspect-auto md:max-h-[500px]"
             src={profileImg}
             width="600"
             height="800"
-            alt="portrait image of Huy standing in front of a tree and foliage"
+            alt="portrait image of Gursewak standing"
           />
         </div>
         <div className="top-20 sm:sticky md:top-28 lg:top-32 md:w-1/2">
@@ -56,7 +58,7 @@ export default function About() {
             >
               A brief intro, who am I?
             </h3>
-            <p ref={body} className=" translate-y-10 text-body-1 2xl:text-4xl opacity-0">
+            <p ref={body} className="translate-y-10 text-body-1 2xl:text-4xl opacity-0">
               I am an independent frontend developer, UI/UX designer and App Developer based in
               Hong Kong, China.
               <br></br>
